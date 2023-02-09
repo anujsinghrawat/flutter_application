@@ -42,9 +42,10 @@ class _HomeState extends State<Home> {
             child: Column(
           children: [
             SizedBox(
-              height: 1600,
               child: isLoaded
                   ? ListView.builder(
+                      shrinkWrap: true,
+                      physics: ClampingScrollPhysics(),
                       itemCount: dataSource!.length,
                       itemBuilder: (context, index) {
                         return Column(
@@ -74,11 +75,6 @@ class _HomeState extends State<Home> {
                                                   dataSource![index]
                                                       .avatar
                                                       .toString()),
-                                              // child: Image.network(
-                                              //   dataSource![index].avatar.toString(),
-                                              //   height: 100,
-                                              //   width: 100,
-                                              // ),
                                             ),
                                             Column(
                                               mainAxisAlignment:

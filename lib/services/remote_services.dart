@@ -4,14 +4,12 @@ import 'package:flutter_application/models/data_model.dart';
 import 'package:http/http.dart' as http;
 
 class RemoteService {
-
-
   static Future<List<Model>?> getData() async {
     var uri = Uri.parse("https://reqres.in/api/users?page=2");
 
     final response = await http.get(uri);
     final body = jsonDecode(response.body);
-    print(body);
+    // print(body);
 
     List<Model> abc = [];
     for (int i = 0; i < body['data'].length; i++) {
